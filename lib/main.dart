@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:destini_app/story_brain.dart';
 
-//TODO: Step 15 - Run the app and see if you can see the screen update with the first story. Delete this TODO if it looks as you expected.
-
 StoryBrain storyBrain = StoryBrain();
 
 void main() => runApp(const Destini());
@@ -60,7 +58,8 @@ class _StoryPageState extends State<StoryPage> {
                 child: TextButton(
                   onPressed: () {
                     //Choice 1 made by user.
-                    //TODO: Step 18 - Call the nextStory() method from storyBrain and pass the number 1 as the choice made by the user.
+                    //Step 18 - Call the nextStory() method from storyBrain and pass the number 1 as the choice made by the user.
+                    storyBrain.nextStory(1);
                   },
                   style: TextButton.styleFrom(
                     primary: Colors.white,
@@ -81,12 +80,16 @@ class _StoryPageState extends State<StoryPage> {
                 flex: 2,
                 //TODO: Step 26 - Use a Flutter Visibility Widget to wrap this FlatButton.
                 //TODO: Step 28 - Set the "visible" property of the Visibility Widget to equal the output from the buttonShouldBeVisible() method in the storyBrain.
-                child: FlatButton(
+                child: TextButton(
                   onPressed: () {
                     //Choice 2 made by user.
-                    //TODO: Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
+                    //Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
+                    storyBrain.nextStory(2);
                   },
-                  color: Colors.blue,
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    backgroundColor: Colors.blue,
+                  ),
                   child: Text(
                     storyBrain.getChoice2(),
                     style: const TextStyle(
