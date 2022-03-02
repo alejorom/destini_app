@@ -57,16 +57,18 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                 flex: 2,
-                child: FlatButton(
+                child: TextButton(
                   onPressed: () {
                     //Choice 1 made by user.
                     //TODO: Step 18 - Call the nextStory() method from storyBrain and pass the number 1 as the choice made by the user.
                   },
-                  color: Colors.red,
-                  child: const Text(
-                    //TODO: Step 13 - Use the storyBrain to get the text for choice 1.
-                    'Choice 1',
-                    style: TextStyle(
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    backgroundColor: Colors.red,
+                  ),
+                  child: Text(
+                    storyBrain.getChoice1(),
+                    style: const TextStyle(
                       fontSize: 20.0,
                     ),
                   ),
@@ -85,10 +87,9 @@ class _StoryPageState extends State<StoryPage> {
                     //TODO: Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
                   },
                   color: Colors.blue,
-                  child: const Text(
-                    //TODO: Step 14 - Use the storyBrain to get the text for choice 2.
-                    'Choice 2',
-                    style: TextStyle(
+                  child: Text(
+                    storyBrain.getChoice2(),
+                    style: const TextStyle(
                       fontSize: 20.0,
                     ),
                   ),
